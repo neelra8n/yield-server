@@ -21,7 +21,7 @@ const ABIS = {
 
 const fetchLatestAPY = async () => {
   try {
-    const response = await fetch('https://api.evolve.fi/vaults/eusd');
+    const response = await fetch('https://gw.goevolve.xyz/vault/api/public/vaults/eusd?chainId=1329');
     const data = await response.json();
     const apy = data?.apy ?? data?.metrics?.apy ?? 0;
     return typeof apy === 'number' ? parseFloat((apy * 100).toFixed(2)) : 0;
